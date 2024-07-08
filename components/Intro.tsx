@@ -4,7 +4,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { BsArrowRight, BsLinkedin } from "react-icons/bs"
 import { HiDownload } from "react-icons/hi"
-import { FaGithubSquare } from "react-icons/fa"
+import { FaGithubSquare, FaDiscord } from "react-icons/fa"
 import Link from "next/link"
 import { Source_Code_Pro } from "next/font/google"
 import { useLocale } from "next-intl"
@@ -62,7 +62,7 @@ export default function Intro() {
               stiffness: 125,
             }}
           >
-            👋
+            🧙🏽‍♂️
           </motion.span>
         </div>
       </div>
@@ -96,9 +96,9 @@ export default function Intro() {
             >
               <TypeAnimation
                 sequence={[
-                  "Frontend Developer",
+                  "Data Scientist",
                   1000,
-                  "Full Stack Developer",
+                  "Applied AI Engineer",
                   1000,
                 ]}
                 wrapper="span"
@@ -112,7 +112,7 @@ export default function Intro() {
         {activeLocale === "en" && (
           <p>
             My focus is{" "}
-            <span className="italic font-bold">React (Next.js)</span>.
+            <span className="italic font-bold">Generative AI</span>.
           </p>
         )}
       </motion.h1>
@@ -125,32 +125,19 @@ export default function Intro() {
           delay: 0.1,
         }}
       >
-        {/* <Link
-          href="#contact"
-          onClick={() => {
-            setActiveSection("Contact")
-            setTimeOfLastClick(Date.now())
-          }}
-          className="group bg-gray-900 px-4 py-2 text-sm sm:text-lg text-white sm:px-7 sm:py-3 flex items-center gap-2  rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-        >
-          Contact me here
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-        </Link> */}
         <a
           href={
-            activeLocale == "en" ? "/Joy-fullstack.pdf" : "/前端开发-彭郁洁.pdf"
+            activeLocale == "en" ? "/akash_mondal.pdf" : "/前端开发-彭郁洁.pdf"
           }
           download={true}
           className=" bg-white py-2 px-3 text-sm text-gray-700 flex items-center gap-2  rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-
-          // className="group text-sm  px-4 py-2  bg-white sm:text-lg sm:px-7 sm:py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
         >
           {t("download_cv")}
           <HiDownload />
         </a>
         <a
           className="bg-white p-3 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://www.linkedin.com/in/joy-yujiepeng/"
+          href="https://www.linkedin.com/in/akshmnd/"
           target="_blank"
         >
           <BsLinkedin />
@@ -158,19 +145,18 @@ export default function Intro() {
 
         <a
           className="bg-white p-3 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://github.com/Codefreyy"
+          href="https://github.com/akash-mondal"
           target="_blank"
         >
           <FaGithubSquare />
         </a>
+
         <a
-          className=" bg-white py-2 px-3 text-sm text-gray-700 flex items-center gap-2  rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://blog-joy-peng.netlify.app"
+          className="bg-white p-3 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+          href="https://discord.com/invite/RfFa2NEQnq "
           target="_blank"
         >
-          {t("blog")}
-
-          {/* <FaGithubSquare /> */}
+          <FaDiscord />
         </a>
       </motion.div>
     </section>

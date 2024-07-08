@@ -45,46 +45,55 @@ export const headerLanguageMap = {
 
 export const experiencesData = [
     {
-        title: "MSc in Computing and IT",
-        location: "University of St Andrews, UK",
-        description:
-            "Achieved a Master's degree in Computing and IT, acquiring in-depth knowledge in areas such as Human Computer Interaction, Computer Communication Systems, and Information Security. Developed strong capabilities in computational thinking, user-centred design, and data visualisation, preparing for effective application in technology-driven environments",
-        icon: React.createElement(LuGraduationCap),
-        date: "2023 Sep - 2024 May",
+      date: "Feb. 2024 – Apr. 2024",
+      title: "Data Science Intern (Hybrid)",
+      location: "Yash Technologies, Indore, Madhya Pradesh, India",
+      description: `
+        Developed a State-of-the-Art Virtual Try-On (SOTA VTON) web application using Streamlit, enabling users to virtually
+        try on garments on model images and search for garments from various e-commerce websites.
+        Implemented a multi-view diffusion model to generate GIFs showcasing output images from different angles, enhancing
+        user experience and visualization. (Novel View Generation)
+        Utilized various deep learning techniques including image segmentation (Hugging Face SegFormer model), Stable
+        Diffusion inpainting models with ControlNet, and IDM-VTON for accurate and realistic virtual try-on results.
+      `,
+      icon: React.createElement(FaVuejs),
     },
     {
-        title: "Frontend Intern",
-        location: React.createElement("span", {},
-            React.createElement("a", {
-                href: "https://www.nio.com/",
-                style: { textDecoration: 'underline' },
-                target: "_blank"
-            }, "NIO Inc."),
-            " Wuhan, China"
-        ),
-        description:
-            "Developed NIO's third-generation station list and detail pages using Vue3, TypeScript, and Baidu Maps API. Implemented role-based access control for the Task Wizard page, enhancing system security. Collaborated effectively within a Jira-managed environment, utilizing Jenkins for deployment processes.",
-        icon: React.createElement(FaVuejs),
-        date: "2022 Aug - 2022 Dec",
+      date: "Aug. 2023 – Sep. 2023",
+      title: "DataCenter Intern (On Site)",
+      location: "Bharat Heavy Electricals Limited (BHEL), Hyderabad, Telangana, India",
+      description: `
+        Collaborated with a cross-functional team to implement a Temperature Monitoring and Control System for data centers.
+        Utilized NetBeans, Java, and JavaServer Pages (JSP) to develop a robust system for real-time temperature monitoring.
+        Integrated Internet of Things (IoT) sensors and Arduino microcontrollers to collect data and ensure optimal operating
+        conditions.
+        Maintained and managed Oracle Database for storing temperature data and generating reports.
+      `,
+      icon: React.createElement(FaReact),
     },
     {
-        title: "Frontend Assistant",
-        location: "Wuhan University | Wuhan, China",
-        description:
-            "Developed and maintained Finknow, a Financial Knowledge Graph Query and Analysis Platform using umi (React framework) and Ant Design Pro. Utilized graphin, a React toolkit for graph analysis based on G6, to develop an Equity Network Penetration Graph, enhancing data visualization capabilities.",
-        icon: React.createElement(FaReact),
-        date: "2022 May - 2022 July",
+      date: "May. 2023 – Sep. 2023",
+      title: "Machine Learning Intern (Remote)",
+      location: "MathWorks",
+      description: `
+        Independently learned and implemented machine learning techniques, particularly using MATLAB for image processing,
+        signal processing and deep learning.
+        Developed a strong understanding of MATLAB and its applications in the fields of AI and machine learning.
+        Worked remotely, demonstrating self-motivation and a dedication to acquiring new skills and knowledge.
+      `,
+      icon: React.createElement(FaReact),
     },
     {
-        title: "BA in Digital Publishing",
-        location: "Wuhan University, China",
-        description:
-            "Graduated with a Bachelor of Arts in Digital Publishing, securing a GPA of 3.81/4.0. Gained foundational knowledge in digital media and publishing technologies.",
-        icon: React.createElement(LuGraduationCap),
-        date: "2019 Sep - 2023 Jun",
+      date: "2021 – 2025",
+      title: "B.Tech in Computer Science Engineering",
+      location: "VIT Chennai, Tamil Nadu, India",
+      description: `
+        Pursuing a Bachelor of Technology in Computer Science Engineering with a specialization in Cyber Physical Systems.
+        Developed a solid foundation in computer science principles and practical skills in various areas such as AI, machine learning, and data science.
+      `,
+      icon: React.createElement(LuGraduationCap),
     },
-
-]
+  ]
 
 export const experiencesDataZn = [
     {
@@ -122,63 +131,72 @@ export type ProjectTags = typeof projectsData[number]["tags"];
 
 export const projectsData = [
     {
-        title: "Typing Speed",
-        title_zh: '打字测验',
+        title: "StellarFrames",
+        title_zh: '超个性化广告使用GenAI',
         description:
-            "A comprehensive typing speed test application that tracks your overall typing performance. It provides detailed statistics, including total words typed, errors made, and accuracy rate, allowing users to monitor their progress and improve their typing efficiency.",
-        desc_zh: "一个打字速度测试应用。敲击即开始打字，计时结束后将显示总敲击单词数、正确率、错误率等。该应用UI简洁现代，支持Dark Mode切换。",
-        tags: ["React", "TypeScript", "Tailwind", 'Framer Motion'],
-        imageUrl: typingSpeedImage,
-        projectUrl: 'https://github.com/Codefreyy/typing-speed-game',
-        demoUrl: 'https://joy-typing-speed.netlify.app/',
+            "Led the development of 'StellarFrames,' an innovative project focused on creating hyper-personalized advertisements using Generative AI. Winner of a National Level Hackathon.",
+        desc_zh: "开发了“StellarFrames”，这是一个创新项目，旨在利用生成AI创建超个性化广告。",
+        tags: ["Generative AI", "Advertising", "Hackathon"],
+        imageUrl: typingSpeedImage, // Add your image URL here
+        projectUrl: 'https://stellarframe-git-master-akash-mondal.vercel.app/', // Keep empty for now
+        demoUrl: 'https://colab.research.google.com/github/akash-mondal/StellarFramesDemos/blob/main/StellarFramesDemo.ipynb', // Keep empty for now
     },
     {
-        title: "Game Hub",
-        title_zh: '游戏枢纽站',
-        description: "A responsive game grid application that offers search and filter functionality, and features infinite scrolling using React Query. It also includes robust form validation with Zod and efficient state management with Zustand.",
-        desc_zh: "使用React.js、TypeScript和ChakraUI构建的游戏聚合器。项目功能包括响应式游戏网格、搜索和过滤、使用React Query进行数据处理、使用Zod进行表单验证、使用Zustand进行状态管理、React Router进行导航以及实现无限滚动。",
-        tags: ["React", "TypeScript", "Zod", "React Query", "Chakra UI"],
-        imageUrl: gameHubImage,
-        projectUrl: 'https://github.com/Codefreyy/New-Game-hub',
-        demoUrl: 'https://joy-gamehub.netlify.app/',
-
-
+        title: "Project Dark",
+        title_zh: '电子商务网站中黑暗模式的可扩展生态系统',
+        description: "Developed a scalable ecosystem aimed at identifying and mitigating dark patterns in eCommerce websites using AI and generative AI techniques.",
+        desc_zh: "开发了一个可扩展的生态系统，旨在使用AI和生成AI技术识别和减轻电子商务网站中的黑暗模式。",
+        tags: ["AI", "Generative AI", "Ecommerce"],
+        imageUrl: gameHubImage, // Add your image URL here
+        projectUrl: 'https://github.com/Project-Dark', // Keep empty for now
+        demoUrl: 'https://www.youtube.com/watch?v=tz5xMQA26OM', // Keep empty for now
     },
     {
-        title: "Breddit",
-        title_zh: "社交新闻论坛",
+        title: "SHRESHTH",
+        title_zh: '双语多模式语音激活助手',
         description:
-            `A modern full-stack Reddit clone features infinite scrolling, secure authentication via NextAuth and Google, and a custom feed for authenticated users. It utilizes Upstash Redis for advanced caching and React-Query for efficient data fetching, ensuring a responsive and user-friendly experience with optimistic updates.
-            `,
-        desc_zh: "一个现代且简洁的Reddit克隆项目，使用Next.js、TypeScript和Tailwind CSS构建。项目功能包括无限滚动动态加载帖子、NextAuth与Google认证、为认证用户提供自定义Feed、高级缓存、乐观更新、React-Query数据获取、美观的帖子编辑器、图片上传和链接预览、以及完整的评论功能。",
-        tags: ["JavaScript", "HTML", "CSS3"],
-        imageUrl: breadditImage,
-        projectUrl: 'https://github.com/Codefreyy/Breddit',
-        demoUrl: 'https://joy-breaddit-reddit-clone.netlify.app/',
+            "Created a voice-activated assistant for Indian Space Research Organization (ISRO) that uses Retrieval Augmented Generation for performing Q&A on provided documents.",
+        desc_zh: "为印度空间研究组织（ISRO）创建了一个使用文档检索增强生成技术进行问答的语音激活助手。",
+        tags: ["Voice Recognition", "AI", "ISRO"],
+        imageUrl: rubicGameImage, // Add your image URL here
+        projectUrl: 'https://huggingface.co/spaces/AkashMnd/SHRESHTH/tree/main', // Keep empty for now
+        demoUrl: 'https://www.youtube.com/watch?v=lHS247B0yIQ', // Keep empty for now
     },
+    {
+        title: "Seamless AI",
+        title_zh: "多模态AI套件用于多样化用户交互",
+        description:
+            "Developed Seamless AI, a suite combining NLP, computer vision, and multimodal capabilities to support interactions in 11 Indian languages.",
+        desc_zh: "开发了Seamless AI，这是一个结合了NLP、计算机视觉和多模态能力的套件，支持使用11种印度语言进行交互。",
+        tags: ["NLP", "Computer Vision", "Multimodal AI"],
+        imageUrl: breadditImage, // Add your image URL here
+        projectUrl: 'https://github.com/akash-mondal/Seamless-AI', // Keep empty for now
+        demoUrl: '', // Keep empty for now
+    }
+];
 
-
-]
 
 export const skillsData = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next",
-    "Vue2",
-    "Vue3",
-    "Node",
-    "Express",
-    "Git",
-    "Github",
-    "Tailwind",
-    "Chakra UI",
-    "Boostrap",
-    "Prisma",
-    "MongoDB",
-    "Framer Motion",
-    "d3",
-    "UI/UX"
-] 
+  "Python",
+  "R",
+  "MATLAB",
+  "Java",
+  "JavaScript",
+  "Node.js",
+  "Express.js",
+  "Git",
+  "GitHub",
+  "Streamlit",
+  "Oracle Database",
+  "MongoDB",
+  "PostgreSQL",
+  "PyTorch",
+  "Tensorflow",
+  "Machine Learning",
+  "Deep Learning",
+  "Natural Language Processing (NLP)",
+  "Automatic Speech Recognition (ASR)",
+  "Text To Speech (TTS)",
+  "Internet of Things (IoT)"
+];
+

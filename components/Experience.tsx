@@ -39,7 +39,6 @@ export default function Experience({ isMobile }: { isMobile: boolean }) {
     <section className="sm:mb-40 relative mb-20">
       <ExperienceLabel />
       <SectionHeading>
-        {" "}
         {activeLocale === "zh"
           ? headerLanguageMap["Experiences"]
           : "My Experiences"}

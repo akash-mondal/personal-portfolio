@@ -7,11 +7,14 @@ import clsx from "clsx"
 import { headerLanguageMap } from "@/lib/data"
 import { useActiveSectionContext } from "@/context/action-section-context"
 import { useLocale } from "next-intl"
+import React, { useState } from "react";
 
 function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext()
   const activeLocale = useLocale()
+  const [headerText, setHeaderText] = useState("Five Tabs");
+
   return (
     <header className="z-[999] relative">
       <motion.div

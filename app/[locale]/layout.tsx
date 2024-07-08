@@ -38,7 +38,6 @@ export default function RootLayout({
               <Footer />
               <WidgetWrapper>
                 <ThemeSwitch />
-                <LanguageSwitch />
               </WidgetWrapper>
             </ActionSectionContextProvider>
           </ThemeContextProvider>
