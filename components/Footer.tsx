@@ -2,8 +2,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
-const ZombieImage = ({ src, alt, playSound = false }) => {
-  const audioRef = useRef(null);
+interface ZombieImageProps {
+  src: string;
+  alt: string;
+  playSound?: boolean;
+}
+
+const ZombieImage: React.FC<ZombieImageProps> = ({ src, alt, playSound = false }) => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     if (playSound) {
@@ -12,7 +18,7 @@ const ZombieImage = ({ src, alt, playSound = false }) => {
   }, [playSound]);
 
   const playRandomGrowl = () => {
-    if (playSound) {
+    if (playSound && audioRef.current) {
       const audioFiles = ['grawl1.mp3', 'grawl2.mp3', 'grawl3.mp3', 'grawl4.mp3', 'grawl5.mp3'];
       const randomFile = audioFiles[Math.floor(Math.random() * audioFiles.length)];
       audioRef.current.src = `/${randomFile}`;
@@ -30,10 +36,15 @@ const ZombieImage = ({ src, alt, playSound = false }) => {
   );
 };
 
-const ScratchingZombie = ({ src, alt }) => {
+interface ScratchingZombieProps {
+  src: string;
+  alt: string;
+}
+
+const ScratchingZombie: React.FC<ScratchingZombieProps> = ({ src, alt }) => {
   const [showScratch, setShowScratch] = useState(false);
   const [scratchPosition, setScratchPosition] = useState({ top: 0, left: 0 });
-  const audioRef = useRef(new Audio('/scratch.mp3'));
+  const audioRef = useRef<HTMLAudioElement>(new Audio('/scratch.mp3'));
 
   const handleMouseEnter = () => {
     setShowScratch(true);
@@ -75,7 +86,13 @@ const ScratchingZombie = ({ src, alt }) => {
     </>
   );
 };
-const ControlsModal = ({ isOpen, onClose }) => {
+
+interface ControlsModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const ControlsModal: React.FC<ControlsModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
@@ -109,7 +126,7 @@ const ControlsModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default function Footer() {
+const Footer: React.FC = () => {
   const [isGameVisible, setIsGameVisible] = useState(false);
   const [isControlsVisible, setIsControlsVisible] = useState(false);
 
@@ -137,7 +154,7 @@ export default function Footer() {
           className="bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50"
           onClick={toggleGameVisibility}
         >
-          Don't Click... or Bite 🧟
+          Don&apos;t Click... or Bite 🧟
         </button>
       </footer>
       {isGameVisible && (
@@ -173,4 +190,6 @@ export default function Footer() {
       <ControlsModal isOpen={isControlsVisible} onClose={toggleControlsVisibility} />
     </>
   );
-}
+};
+
+export default Footer;
