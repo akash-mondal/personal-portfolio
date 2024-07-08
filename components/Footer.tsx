@@ -74,8 +74,11 @@ const ZombieImage: React.FC<ZombieImageProps> = ({ src, alt, playSound = false }
     </div>
   );
 };
+interface FooterProps {
+  onGameVisibilityChange: (isVisible: boolean) => void;
+}
 
-const Footer: React.FC = () => {
+const Footer: React.FC<FooterProps> = ({ onGameVisibilityChange }) => {
   const { theme } = useTheme();
   const [isGameVisible, setIsGameVisible] = useState(false);
   const [showScratch, setShowScratch] = useState(false);
@@ -85,9 +88,10 @@ const Footer: React.FC = () => {
   const { width: iframeWidth, height: iframeHeight } = useResponsiveDimensions();
 
   const toggleGameVisibility = () => {
-    setIsGameVisible(!isGameVisible);
+    const newVisibility = !isGameVisible;
+    setIsGameVisible(newVisibility);
+    onGameVisibilityChange(newVisibility);
   };
-
   const handleCloseButtonHover = () => {
     setShowScratch(true);
     setScratchPosition({
