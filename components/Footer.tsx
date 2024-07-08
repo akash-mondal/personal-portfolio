@@ -155,7 +155,7 @@ const Footer: React.FC<FooterProps> = ({ onGameVisibilityChange }) => {
           }`}
           onClick={toggleGameVisibility}
         >
-          Don&apos;t Click... or Bite 🧟
+          Fetch Me Their Souls 🧟
         </button>
       </footer>
       {isGameVisible && (
