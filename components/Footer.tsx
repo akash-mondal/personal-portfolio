@@ -74,6 +74,7 @@ const ZombieImage: React.FC<ZombieImageProps> = ({ src, alt, playSound = false }
     </div>
   );
 };
+
 interface FooterProps {
   onGameVisibilityChange: (isVisible: boolean) => void;
 }
@@ -92,6 +93,7 @@ const Footer: React.FC<FooterProps> = ({ onGameVisibilityChange }) => {
     setIsGameVisible(newVisibility);
     onGameVisibilityChange(newVisibility);
   };
+
   const handleCloseButtonHover = () => {
     setShowScratch(true);
     setScratchPosition({
@@ -140,10 +142,15 @@ const Footer: React.FC<FooterProps> = ({ onGameVisibilityChange }) => {
           border: 1px solid ${theme === 'light' ? 'rgba(200, 200, 200, 0.7)' : 'rgba(255, 255, 255, 0.3)'};
           box-shadow: inset 0 0 15px ${theme === 'light' ? 'rgba(200, 200, 200, 0.5)' : 'rgba(255, 255, 255, 0.2)'};
         }
+        @media (max-width: 767px) {
+          .hide-on-mobile {
+            display: none;
+          }
+        }
       `}</style>
       <footer className="mb-10 px-4 text-center text-gray-500">
         <button
-          className={`py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-opacity-50 glowing-red glassy-red ${
+          className={`py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-opacity-50 glowing-red glassy-red hide-on-mobile ${
             theme === "light" ? "text-black" : "text-white"
           }`}
           onClick={toggleGameVisibility}
