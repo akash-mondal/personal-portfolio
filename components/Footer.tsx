@@ -2,6 +2,24 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
+// Custom hook to detect mobile devices
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  return isMobile;
+};
+
 interface ZombieImageProps {
   src: string;
   alt: string;
@@ -129,6 +147,7 @@ const ControlsModal: React.FC<ControlsModalProps> = ({ isOpen, onClose }) => {
 const Footer: React.FC = () => {
   const [isGameVisible, setIsGameVisible] = useState(false);
   const [isControlsVisible, setIsControlsVisible] = useState(false);
+  const isMobile = useIsMobile();
 
   const toggleGameVisibility = () => {
     setIsGameVisible(!isGameVisible);
@@ -150,12 +169,14 @@ const Footer: React.FC = () => {
         }
       `}</style>
       <footer className="mb-10 px-4 text-center text-gray-500">
-        <button
-          className="bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50"
-          onClick={toggleGameVisibility}
-        >
-          Don&apos;t Click... or Bite 🧟
-        </button>
+        {!isMobile && (
+          <button
+            className="bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50"
+            onClick={toggleGameVisibility}
+          >
+            Don&apos;t Click... or Bite 🧟
+          </button>
+        )}
       </footer>
       {isGameVisible && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
