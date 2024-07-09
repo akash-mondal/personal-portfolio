@@ -164,7 +164,7 @@ export default function Intro() {
           href="mailto:akshmnd@outlook.com"
         >
           <BsEnvelope />
-          {t("contact_me")}
+          Contact Me
         </a>
       </motion.div>
     </section>
