@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { BsArrowRight, BsLinkedin } from "react-icons/bs"
+import { BsArrowRight, BsLinkedin, BsEnvelope } from "react-icons/bs"
 import { HiDownload } from "react-icons/hi"
 import { FaGithubSquare, FaDiscord } from "react-icons/fa"
 import Link from "next/link"
@@ -118,7 +118,7 @@ export default function Intro() {
       </motion.h1>
 
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center  gap-3 px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -130,7 +130,7 @@ export default function Intro() {
             activeLocale == "en" ? "/akash_mondal.pdf" : "/前端开发-彭郁洁.pdf"
           }
           download={true}
-          className=" bg-white py-2 px-3 text-sm text-gray-700 flex items-center gap-2  rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+          className="bg-white py-2 px-3 text-sm text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
         >
           {t("download_cv")}
           <HiDownload />
@@ -158,7 +158,16 @@ export default function Intro() {
         >
           <FaDiscord />
         </a>
+
+        <a
+          className="bg-white p-3 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+          href="mailto:akshmnd@outlook.com"
+        >
+          <BsEnvelope />
+          {t("contact_me")}
+        </a>
       </motion.div>
     </section>
   )
 }
+
